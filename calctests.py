@@ -149,6 +149,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.ceil(10.9), 11)
 
     print("test")
+    print("2")
 
 
 

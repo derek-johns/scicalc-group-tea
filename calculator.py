@@ -1,5 +1,6 @@
 import math
 
+
 class Calculator:
 
     def __init__(self):
@@ -21,7 +22,7 @@ class Calculator:
         return -x
 
     def display_error(self):
-        pass
+        return 'Error!'
 
     def sine(self, x):
         return math.sin(x)
@@ -41,9 +42,8 @@ class Calculator:
     def inverse_tan(self, x):
         return math.atan(x)
 
-    def switchUnitsMode(self):
-        pass
+    def factorial(self, x):
+        return math.factorial(x)
 
-    def switchUnitsMode(self, mode):
-        pass
-# add lots more methods to this calculator class.
+    def absolute_value(self, x):
+        return abs(x)

@@ -19,9 +19,6 @@ def performCalcLoop(calc):
         elif choice == 'add':
             a, b = getTwoNumbers()
             displayResult(calc.add(a, b))
-        elif choice == 'exponent':
-            a, b = getTwoNumbers()
-            displayResult(calc.exponentiation(a, b))
         else:
             print("That is not a valid input.")
 

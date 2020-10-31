@@ -19,7 +19,7 @@ class TestStringMethods(unittest.TestCase):
     def test_sub(self):
         c = Calculator()
         self.assertEqual(c.sub(9, 3), 6)
-
+ 
     def test_sub2(self):
         c = Calculator()
         self.assertEqual(c.sub(6, 3), 3)
@@ -147,6 +147,9 @@ class TestStringMethods(unittest.TestCase):
     def test_ceil3(self):
         c = Calculator()
         self.assertEqual(c.ceil(10.9), 11)
+
+    print("test")
+
 
 
 if __name__ == '__main__':

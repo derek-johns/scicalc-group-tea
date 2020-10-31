@@ -24,16 +24,16 @@ class Calculator:
         return math.sqrt(x)
 
     def log(self, x):
-        return math.log10(x)
+        return round(math.log10(x), 4)
 
     def ilog(self, x):
         return 10 ** x
 
     def nlog(self, x):
-        return math.log(x)
+        return round(math.log(x), 4)
 
     def inlog(self, x):
-        return math.exp(x)
+        return round(math.exp(x), 4)
 
     def floor(self,x):
         return math.floor(x)

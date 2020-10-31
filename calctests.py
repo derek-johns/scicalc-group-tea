@@ -20,6 +20,9 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         self.assertEqual(c.sub(9, 3), 6)
 
+    print("test")
+    print("2")
+
 
 if __name__ == '__main__':
     unittest.main()

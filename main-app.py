@@ -1,6 +1,7 @@
 from calculator import Calculator
 import sys
 import menu
+import switch_mode
 
 m = [0]
 m1 = [0]

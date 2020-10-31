@@ -1,6 +1,7 @@
 #changing to main_app.py for import
 import importlib
 main_app = importlib.import_module("main-app")
+import switch_mode
 
 path = []
 
@@ -44,8 +45,8 @@ def basics(calc, path):
     elif operation1 == "5":
         calc.m_recall(main_app.m1)
     elif operation1 == "6":
-        calc.switch_display_input(main_app.mode)
-        print(main_app.mode)
+        switch_mode.switch_display_input(main_app.mode)
+        #print(main_app.mode)
     elif operation1 == "7":
         back(calc, path)
     else:

@@ -21,7 +21,7 @@ class Calculator:
         return x ** 2
 
     def sqroot(self, x):
-        return math.sqrt(x)
+        return round(math.sqrt(x), 4)
 
     def log(self, x):
         return round(math.log10(x), 4)

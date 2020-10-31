@@ -1,5 +1,4 @@
-#changing to main_app.py for import
-
+import math
 
 class Calculator:
 
@@ -10,7 +9,40 @@ class Calculator:
         return x + y
 
     def sub(self, x, y):
-        return 0
+        return x - y
+
+    def mul(self, x, y):
+        return x * y
+
+    def div(self, x, y):
+        return x / y
+
+    def sqr(self, x):
+        return x ** 2
+
+    def sqroot(self, x):
+        return round(math.sqrt(x), 4)
+
+    def log(self, x):
+        return round(math.log10(x), 4)
+
+    def ilog(self, x):
+        return 10 ** x
+
+    def nlog(self, x):
+        return round(math.log(x), 4)
+
+    def inlog(self, x):
+        return round(math.exp(x), 4)
+
+    def floor(self,x):
+        return math.floor(x)
+
+    def ceil(self,x):
+        return math.ceil(x)
+
+
+
 
     def m_plus(self, memory, memory_store):
         import importlib
@@ -61,3 +93,4 @@ class Calculator:
 
 
 # add lots more methods to this calculator class.
+    #def mul(self, ):

@@ -21,6 +21,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.sub(9, 3), 6)
 
     print("test")
+    print("2")
 
 
 if __name__ == '__main__':

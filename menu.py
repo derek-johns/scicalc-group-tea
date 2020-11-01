@@ -1,6 +1,7 @@
 #changing to main_app.py for import
 import importlib
 main_app = importlib.import_module("main-app")
+import switch_mode
 
 path = []
 
@@ -20,7 +21,8 @@ def start_menu(calc, path):
         complex(calc, path)
     elif operation == "5":
         pass
-        #return "exit"
+        #result = "exit"
+        #return result
     else:
         print("Enter a valid input.")
         run_menu(calc)
@@ -28,25 +30,35 @@ def start_menu(calc, path):
 def basics(calc, path):
     print("Basic Functionality")
     operation1 = input(" [1] Display value \n [2] Clear display \n "
-                       "[3] Add value to memory \n [4] Clear memory \n "
-                       "[5] Recall value in memory \n "
-                       "[6] Switch display by input \n "
-                       "[7] Back \n" )
+                       "[3] Absolute value \n [4] Floor \n [5] Ceiling \n "
+                       "[6] Add value to memory \n [7] Clear memory \n "
+                       "[8] Recall value in memory \n "
+                       "[9] Switch display by input \n "
+                       "[10] Back \n" )
     path.append(operation1)
     if operation1 == "1":
         pass
     elif operation1 == "2":
         pass
     elif operation1 == "3":
-        calc.m_plus(main_app.m, main_app.m1)
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.absolute_value(a))
     elif operation1 == "4":
-        calc.m_reset(main_app.m, main_app.m1)
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.floor(a))
     elif operation1 == "5":
-        calc.m_recall(main_app.m1)
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.ceil(a))
     elif operation1 == "6":
-        calc.switch_display_input(main_app.mode)
-        print(main_app.mode)
+        calc.m_plus(main_app.m, main_app.m1)
     elif operation1 == "7":
+        calc.m_reset(main_app.m, main_app.m1)
+    elif operation1 == "8":
+        calc.m_recall(main_app.m1)
+    elif operation1 == "9":
+        switch_mode.switch_display_input(main_app.mode)
+        #print(main_app.mode)
+    elif operation1 == "10":
         back(calc, path)
     else:
         print("Enter a valid input.")
@@ -61,23 +73,30 @@ def simple(calc, path):
     if operation2 == "1":
         a,b = main_app.getTwoNumbers()
         main_app.displayResult(calc.add(a,b))
-        #return calc.add(a,b)
     elif operation2 == "2":
-        pass
+        a,b = main_app.getTwoNumbers()
+        main_app.displayResult(calc.sub(a,b))
     elif operation2 == "3":
-        pass
+        a,b = main_app.getTwoNumbers()
+        main_app.displayResult(calc.mul(a,b))
     elif operation2 == "4":
-        pass
+        a,b = main_app.getTwoNumbers()
+        main_app.displayResult(calc.div(a,b))
     elif operation2 == "5":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.sqr(a))
     elif operation2 == "6":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.sqroot(a))
     elif operation2 == "7":
-        pass
+        a,b = main_app.getTwoNumbers()
+        main_app.displayResult(calc.exponentiation(a, b))
     elif operation2 == "8":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.inverse(a))
     elif operation2 == "9":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.invertsign(a))
     elif operation2 == "10":
         back(calc, path)
     else:
@@ -90,17 +109,23 @@ def scientific(calc, path):
                        "[6] Inverse Tangent \n [7] Back \n")
     path.append(operation3)
     if operation3 == "1":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.sine(a))
     elif operation3 == "2":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.cosine(a))
     elif operation3 == "3":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.tangent(a))
     elif operation3 == "4":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.inverse_sine(a))
     elif operation3 == "5":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.inverse_cosine(a))
     elif operation3 == "6":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.inverse_tangent(a))
     elif operation3 == "7":
         back(calc, path)
     else:
@@ -117,15 +142,20 @@ def complex(calc, path):
                        "[8] Back \n")
     path.append(operation4)
     if operation4 == "1":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.factorial(a))
     elif operation4 == "2":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.log(a))
     elif operation4 == "3":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.ilog(a))
     elif operation4 == "4":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.nlog(a))
     elif operation4 == "5":
-        pass
+        a = main_app.getOneNumber()
+        main_app.displayResult(calc.inlog(a))
     elif operation4 == "6":
         pass
     elif operation4 == "7":
@@ -145,6 +175,7 @@ def back(calc, path):
 
 def run_menu(calc):
 
-    start_menu(calc, path)
+    result = start_menu(calc, path)
+    #return result
 
 #run_menu(Cal)

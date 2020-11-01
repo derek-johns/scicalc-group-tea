@@ -148,9 +148,6 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         self.assertEqual(c.ceil(10.9), 11)
 
-    print("test")
-    print("2")
-
 
 
 if __name__ == '__main__':

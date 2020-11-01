@@ -11,12 +11,32 @@ class Calculator:
     def sub(self, x, y):
         return x - y
 
+    def mul(self, x, y):
+        return x * y
+
+    def div(self, x, y):
+        if y == 0:
+            return Calculator.display_error(self)
+        else:
+            return x / y
+
+    def sqr(self, x):
+        return x ** 2
+
+    def sqroot(self, x):
+        if x < 0:
+            return Calculator.display_error(self)
+        else:
+            return round(math.sqrt(x), 4)
 
     def exponentiation(self, x, y):
         return x ** y
 
     def inverse(self, x):
-        return 1 / x
+        if x == 0:
+            return Calculator.display_error(self)
+        else:
+            return 1 / x
 
     def invert_sign(self, x):
         return -x
@@ -34,31 +54,25 @@ class Calculator:
         return math.tan(x)
 
     def inverse_sine(self, x):
-        return math.asin(x)
+        if x > 1 or x < -1:
+            return Calculator.display_error(self)
+        else:
+            return math.asin(x)
 
     def inverse_cosine(self, x):
-        return math.acos(x)
+        if x > 1 or x < -1:
+            return Calculator.display_error(self)
+        else:
+            return math.acos(x)
 
     def inverse_tan(self, x):
-        return math.atan(x)
+            return math.atan(x)
 
     def factorial(self, x):
         return math.factorial(x)
 
-    def absolute_value(self, x):
+    def absolute_value(self, x): #no yet
         return abs(x)
-
-    def mul(self, x, y):
-        return x * y
-
-    def div(self, x, y):
-        return x / y
-
-    def sqr(self, x):
-        return x ** 2
-
-    def sqroot(self, x):
-        return round(math.sqrt(x), 4)
 
     def log(self, x):
         return round(math.log10(x), 4)
@@ -77,9 +91,6 @@ class Calculator:
 
     def ceil(self,x):
         return math.ceil(x)
-
-
-
 
     def m_plus(self, memory, memory_store):
         import importlib

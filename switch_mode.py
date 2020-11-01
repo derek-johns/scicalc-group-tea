@@ -1,3 +1,6 @@
+import math
+import calculator as calc
+
 def switch_display_list(mode):
     print("You are in " + mode)
     modes = ["decimal", "hexadecimal", "binary", "octal"]
@@ -15,9 +18,11 @@ def switch_display_input(mode):
         print("You have switched to " + new_mode + ".")
         memory = main_app.m
         current_value = int(memory.pop())
-        new_value = decimal_conversion(new_mode, current_value)
-        print("Your converted value is " + new_value + ". " + "\n")
+        new_value = str(decimal_conversion(new_mode, current_value))
+        #new_value_p = new_value[2:]
+        #print("Your converted value is " + new_value_p + ". " + "\n")
         main_app.mode = new_mode
+        main_app.displayResult(new_value)
     else:
         print("That is not a valid mode.")
 
@@ -25,7 +30,7 @@ def switch_display_input(mode):
 def decimal_conversion(to_mode, value):
     if to_mode == "decimal":
         new_value = str(value)
-    elif to_mode == "binary": #has to be int
+    elif to_mode == "binary":
         new_value = bin(value)
     elif to_mode == "octal":
         new_value = oct(value)
@@ -33,18 +38,29 @@ def decimal_conversion(to_mode, value):
         new_value = hex(value)
     return new_value
 
-"""
-def binary_conversion(to_mode, value):
-    if to_mode == "decimal": #has to be int
-        value = str(value)
-        #value = value[2:]
-        print(value)
-        new_value = int(value, 2)
-    elif to_mode == "octal":
-        new_value = oct(value)
-    elif to_mode == "hexadecimal":
-        new_value = hex(value)
+def switch_units_input(mode):
+    import importlib
+    main_app = importlib.import_module("main-app")
+
+    print("You are in " + mode)
+    new_mode = input("Input a new mode. \n")
+    if new_mode == "degrees" or new_mode == "radians":
+        print("You have switched to " + new_mode + ".")
+        memory = main_app.m
+        current_value = memory.pop()
+        new_value = angle_conversion(new_mode, current_value)
+        print("Your converted value is " + str(new_value) + ". " + "\n")
+        main_app.mode_ang = new_mode
+    else:
+        print("That is not a valid mode.")
+
+def angle_conversion(to_mode, value):
+    if to_mode == "degrees":
+        new_value = round(value * 180/math.pi, 2)
+    elif to_mode == "radians":
+        new_value = round(value * math.pi/180, 4)
+    else:
+        print("Cannot convert")
     return new_value
-"""
 
 #switch_display_input("binary")

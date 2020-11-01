@@ -1,4 +1,5 @@
 import math
+import switch_mode as switch
 
 class Calculator:
 
@@ -44,13 +45,22 @@ class Calculator:
     def display_error(self):
         return 'Error!'
 
-    def sine(self, x):
+    def sine(self, x, mode):
+        if mode == "degrees":
+            x = switch.angle_conversion("radians", x)
+            print("radians: " + str(x))
         return math.sin(x)
 
-    def cosine(self, x):
+    def cosine(self, x, mode):
+        if mode == "degrees":
+            x = switch.angle_conversion("radians", x)
+            print("radians: " + str(x))
         return math.cos(x)
 
-    def tangent(self, x):
+    def tangent(self, x, mode):
+        if mode == "degrees":
+            x = switch.angle_conversion("radians", x)
+            print("radians: " + str(x))
         return math.tan(x)
 
     def inverse_sine(self, x):
@@ -69,7 +79,10 @@ class Calculator:
             return math.atan(x)
 
     def factorial(self, x):
-        return math.factorial(x)
+        if x < 0:
+            return Calculator.display_error(self)
+        else:
+            return math.factorial(x)
 
     def absolute_value(self, x): #no yet
         return abs(x)
@@ -118,25 +131,6 @@ class Calculator:
 
         stored_value = memory_store[0]
         main_app.displayResult(stored_value)
-
-    def switch_display_list(self, mode):
-        print("You are in " + mode)
-        modes = ["decimal", "hexadecimal", "binary", "octal"]
-        index = modes.index(mode)
-
-
-    def switch_display_input(self, mode):
-        import importlib
-        main_app = importlib.import_module("main-app")
-
-        print("You are in " + mode)
-        new_mode = input("Input a new mode. \n")
-        modes = ["decimal", "hexadecimal", "binary", "octal"]
-        if new_mode in modes:
-            print("You have switched to " + new_mode + ".")
-            main_app.mode = new_mode
-        else:
-            print("That is not a valid mode.")
 
 
 

@@ -148,6 +148,7 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         self.assertEqual(c.ceil(10.9), 11)
 
+<<<<<<< HEAD
     def test_exponentiation1(self):
         c = Calculator()
         self.assertEqual(c.exponentiation(2, 3), 8)
@@ -188,7 +189,6 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         self.assertEqual(c.display_error(), 'Error!')
 
-    #
     def test_sine_radian1(self):
         c = Calculator()
         self.assertEqual(c.sine(90), 0.8940)
@@ -262,12 +262,11 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.tangent(360), 0)
 
     def test_inverse_sine(self):
-        c = Calculator()
-        self.assertEqual(c.inverse_sine())
+        pass
 
 
-    print("test")
-    print("2")
+    # print("test")
+    # print("2")
 
 
 

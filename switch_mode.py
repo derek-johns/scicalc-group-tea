@@ -6,7 +6,6 @@ def switch_display_list(mode):
     modes = ["decimal", "hexadecimal", "binary", "octal"]
     index = modes.index(mode)
 
-
 def switch_display_input(mode):
     import importlib
     main_app = importlib.import_module("main-app")
@@ -19,8 +18,6 @@ def switch_display_input(mode):
         memory = main_app.m
         current_value = int(memory.pop())
         new_value = str(decimal_conversion(new_mode, current_value))
-        #new_value_p = new_value[2:]
-        #print("Your converted value is " + new_value_p + ". " + "\n")
         main_app.mode = new_mode
         main_app.displayResult(new_value)
     else:
@@ -62,5 +59,3 @@ def angle_conversion(to_mode, value):
     else:
         print("Cannot convert")
     return new_value
-
-#switch_display_input("binary")

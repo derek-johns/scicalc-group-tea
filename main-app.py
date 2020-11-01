@@ -11,6 +11,7 @@ mode_ang = "radians"
 
 def getOneNumber():
     a = input("number? ")
+    a = check_memory_function(a)
     try:
         c = float(a)
         return c
@@ -21,6 +22,8 @@ def getOneNumber():
 def getTwoNumbers():
     a = input("first number? ")
     b = input("second number? ")
+    a = check_memory_function(a)
+    b = check_memory_function(b)
     try:
         c = float(a)
         d = float(b)
@@ -29,10 +32,13 @@ def getTwoNumbers():
         print("Error!")
         menu.run_menu()
 
+def check_memory_function(value_to_check):
+    if value_to_check == "MRC":
+        return m1[0]
+    else:
+        return value_to_check
 
 def displayResult(x: float):
-    #exit_condition = "no"
-    global exit_condition
     if type(x) == str and (x[:2] == "0b" or x[:2] == "0x" or x[:2] == "0o"):
         x_p = x[2:]
         print(x_p, "\n")
@@ -49,12 +55,11 @@ def displayResult(x: float):
         print(mode)
         print(x_p, "\n")
         m.append(x)
-    #print(m)
-    #print(m1)
     return m
 
 def performCalcLoop():
     print("Welcome to the calculator")
+    print("Type MRC at any time when being asked for number to recall a value that you saved to memory.")
     while True:
         result = menu.run_menu()
         if result == "exit":

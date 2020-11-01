@@ -14,6 +14,7 @@ def start_menu(path):
                       "[3] Scientific Operations \n "
                       "[4] Complex Operations \n [5] Exit \n")
     path.append(operation)
+    result = "good"
     if operation == "1":
         basics(path)
     elif operation == "2":
@@ -23,12 +24,11 @@ def start_menu(path):
     elif operation == "4":
         complex(path)
     elif operation == "5":
-        pass
-        #result = "exit"
-        #return result
+        result = "exit"
     else:
         print("Enter a valid input.")
         run_menu()
+    return result
 
 def basics(path):
     print("Basic Functionality")
@@ -181,8 +181,7 @@ def back(path):
 
 
 def run_menu():
-
     result = start_menu(path)
-    #return result
+    return result
 
 #run_menu(Cal)

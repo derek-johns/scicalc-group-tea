@@ -69,7 +69,10 @@ class Calculator:
             return math.atan(x)
 
     def factorial(self, x):
-        return math.factorial(x)
+        if x < 0:
+            return Calculator.display_error(self)
+        else:
+            return math.factorial(x)
 
     def absolute_value(self, x): #no yet
         return abs(x)

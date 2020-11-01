@@ -110,13 +110,9 @@ class Calculator:
         main_app = importlib.import_module("main-app")
 
         memory_store[0] = memory.pop()
-        #print(last_value)
-        main_app.displayResult(memory_store[0])
-        print("was added to memory." + "\n")
+        print(str(memory_store[0]) + " was added to memory." + "\n")
 
     def m_reset(self, memory, memory_store):
-        #import importlib
-        #main_app = importlib.import_module("main-app")
 
         memory.clear()
         memory_store.clear()
@@ -132,8 +128,4 @@ class Calculator:
         stored_value = memory_store[0]
         main_app.displayResult(stored_value)
 
-
-
-# add lots more methods to this calculator class.
-    #def mul(self, ):
 

@@ -16,10 +16,13 @@ def switch_display_input(mode):
     if new_mode in modes:
         print("You have switched to " + new_mode + ".")
         memory = main_app.m
-        current_value = int(memory.pop())
+        current_value = int(memory[-1])
         new_value = str(decimal_conversion(new_mode, current_value))
         main_app.mode = new_mode
-        main_app.displayResult(new_value)
+        if new_mode != "decimal":
+            new_value = str(new_value)
+            new_value = new_value[2:]
+        print(new_value)
     else:
         print("That is not a valid mode.")
 
@@ -44,7 +47,7 @@ def switch_units_input(mode):
     if new_mode == "degrees" or new_mode == "radians":
         print("You have switched to " + new_mode + ".")
         memory = main_app.m
-        current_value = memory.pop()
+        current_value = memory[-1]
         new_value = angle_conversion(new_mode, current_value)
         print("Your converted value is " + str(new_value) + ". " + "\n")
         main_app.mode_ang = new_mode

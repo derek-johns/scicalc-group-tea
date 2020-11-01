@@ -15,7 +15,7 @@ def getOneNumber():
     try:
         c = float(a)
         return c
-    except:
+    except ValueError:
         print("Error!")
         menu.run_menu()
 
@@ -28,7 +28,7 @@ def getTwoNumbers():
         c = float(a)
         d = float(b)
         return c, d
-    except:
+    except ValueError:
         print("Error!")
         menu.run_menu()
 
@@ -50,11 +50,12 @@ def displayResult(x: float):
         print(x, "\n")
         m.append(x)
     elif x % 1 == 0 and mode != "decimal":
+        original = x
         x = switch.decimal_conversion(mode, int(x))
         x_p = x[2:]
         print(mode)
         print(x_p, "\n")
-        m.append(x)
+        m.append(original)
     return m
 
 def performCalcLoop():

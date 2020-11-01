@@ -149,6 +149,10 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.ceil(10.9), 11)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb69797810302425af6451d60e76daba0f950925
     def test_exponentiation1(self):
         c = Calculator()
         self.assertEqual(c.exponentiation(2, 3), 8)
@@ -268,6 +272,10 @@ class TestStringMethods(unittest.TestCase):
     # print("test")
     # print("2")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb69797810302425af6451d60e76daba0f950925
 
 
 if __name__ == '__main__':

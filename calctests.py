@@ -149,6 +149,129 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.ceil(10.9), 11)
 
 
+    def test_exponentiation1(self):
+        c = Calculator()
+        self.assertEqual(c.exponentiation(2, 3), 8)
+
+    def test_exponentiation2(self):
+        c = Calculator()
+        self.assertEqual(c.exponentiation(5, 4), 625)
+
+    def test_exponentiation3(self):
+        c = Calculator()
+        self.assertEqual(c.exponentiation(-6, 3), -216)
+
+    def test_inverse1(self):
+        c = Calculator()
+        self.assertEqual(c.inverse(4), 0.2500)
+
+    def test_inverse2(self):
+        c = Calculator()
+        self.assertEqual(c.inverse(25), 0.0400)
+
+    def test_inverse3(self):
+        c = Calculator()
+        self.assertEqual(c.inverse(-0.5), -2.0000)
+
+    def test_invert_sign1(self):
+        c = Calculator()
+        self.assertEqual(c.invert_sign(5), -5)
+
+    def test_invert_sign2(self):
+        c = Calculator()
+        self.assertEqual(c.invert_sign(-40), 40)
+
+    def test_invert_sign3(self):
+        c = Calculator()
+        self.assertEqual(c.invert_sign(1500), -1500)
+
+    def test_display_error(self):
+        c = Calculator()
+        self.assertEqual(c.display_error(), 'Error!')
+
+    #
+    def test_sine_radian1(self):
+        c = Calculator()
+        self.assertEqual(c.sine(90), 0.8940)
+
+    def test_sine_radian2(self):
+        c = Calculator()
+        self.assertEqual(c.sine(180), -0.8012)
+
+    def test_sine_radian3(self):
+        c = Calculator()
+        self.assertEqual(c.sine(360), 0.9589)
+
+    def test_sine_degrees1(self):
+        c = Calculator()
+        self.assertEqual(c.sine(90), 1)
+
+    def test_sine_degrees2(self):
+        c = Calculator()
+        self.assertEqual(c.sine(180), 0)
+
+    def test_sine_degrees3(self):
+        c = Calculator()
+        self.assertEqual(c.sine(360), 0)
+
+    def test_cosine_radians1(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(90), -0.4481)
+
+    def test_cosine_radians2(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(180), -0.5985)
+
+    def test_cosine_radians3(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(360), -0.2837)
+
+    def test_cosine_degrees1(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(90), 0)
+
+    def test_cosine_degrees2(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(180), -1)
+
+    def test_cosine_degrees3(self):
+        c = Calculator()
+        self.assertEqual(c.cosine(360), 1)
+
+    def test_tangent_radians1(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(90), -1.9952)
+
+    def test_tangent_radians2(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(180), 1.3387)
+
+    def test_tangent_radians3(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(360), -3.3801)
+
+    def test_tangent_degrees1(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(90), 'Error')
+
+    def test_tangent_degrees2(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(180), 0)
+
+    def test_tangent_degrees3(self):
+        c = Calculator()
+        self.assertEqual(c.tangent(360), 0)
+
+    def test_inverse_sine(self):
+        c = Calculator()
+        self.assertEqual(c.inverse_sine())
+
+
+    print("test")
+    print("2")
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

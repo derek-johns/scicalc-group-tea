@@ -31,12 +31,14 @@ def getTwoNumbers():
 
 
 def displayResult(x: float):
+    #exit_condition = "no"
+    global exit_condition
     if type(x) == str and (x[:2] == "0b" or x[:2] == "0x" or x[:2] == "0o"):
         x_p = x[2:]
         print(x_p, "\n")
         m.append(x)
     elif type(x) == str:
-        print(x, "\n")
+            print(x, "\n")
     elif x % 1 != 0 or (x % 1 == 0 and mode == "decimal"):
         x = round(x, 4)
         print(x, "\n")
@@ -51,13 +53,10 @@ def displayResult(x: float):
     #print(m1)
     return m
 
-
 def performCalcLoop():
     print("Welcome to the calculator")
     while True:
         result = menu.run_menu()
-        #print(result)
-        #displayResult(result)
         if result == "exit":
             break
 

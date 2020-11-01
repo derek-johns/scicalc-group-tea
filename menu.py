@@ -96,7 +96,7 @@ def simple(calc, path):
         main_app.displayResult(calc.inverse(a))
     elif operation2 == "9":
         a = main_app.getOneNumber()
-        main_app.displayResult(calc.invertsign(a))
+        main_app.displayResult(calc.invert_sign(a))
     elif operation2 == "10":
         back(calc, path)
     else:
@@ -125,7 +125,7 @@ def scientific(calc, path):
         main_app.displayResult(calc.inverse_cosine(a))
     elif operation3 == "6":
         a = main_app.getOneNumber()
-        main_app.displayResult(calc.inverse_tangent(a))
+        main_app.displayResult(calc.inverse_tan(a))
     elif operation3 == "7":
         back(calc, path)
     else:

@@ -2,27 +2,16 @@
 
 ## Description
 * **Objective** - To implement an `ScientificCalculator` which displays output of basic and scientific computations.
-* **Purpose** - To establish familiarity with:
-  * Object `state`
-  * Teamwork :+1:
-
 
 ## Git Collaboration
 * Click the `fork` button in the top right corner to create a copy of this repository on your github account.
-  * You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
-* You should work on this project in your own repository.
-
-
-## Requirements
 
 ### Testing
+* All tests passed.
 
-* All features must be tested.
-* Tests must include normal behavior, and any possible error situations.
-* Tests must have descriptive names and should be independent of each other (running or not running one test should not influence the behavior of any other test).
 
 ### Core Features
-* All calculators should have the following features:
+* Following features:
   - A `state`, representing the value currently displayed on the calculator (default 0)
   - Get the current number on the display
   - Clear the display
@@ -32,14 +21,11 @@
   - Calculate the inverse of the number on the display (1/x)
   - Invert the sign of the number on the display (switch between positive and negative)
   - Update the display to `Err` if an error occurs (eg: Division by zero)
-    - Errors must be cleared before any other operation can take place
+    - Errors cleared before any other operation can take place
 
 * Each operation should automatically update the display
-* YOU MAY NEED to break your code into several .py files so that you can do your `git` stuff easier.
-
 
 ### Scientific Features
-
 - Switch display mode (binary, octal, decimal, hexadecimal)
   - `switchDisplayMode()` should rotate through the options
   - `switchDisplayMode(String mode)` should set the display to the mode given
@@ -65,29 +51,3 @@
   - 10<sup>x</sup> (inverse logarithm)
   - Ln (natural logarithm)
   - e<sup>x</sup> (inverse natural logarithm)
-
-
-
-### Custom Features
-
-In addition to the Core and Scientific features, you are required to create at least two of your own features for the calculator. They can be any two features that are not already covered and that you can implement as you see fit. These features must be properly tested.
-
-### Hints
-
-The following functions should take the displayed value (x) and updated it according to the given formula: (this may not be an exhaustive list)
-
-- `square()`: x<sup>2</sup>
-- `squareRoot()`: √x
-- `inverse()`: <sup>1</sup>/<sub>x</sub>
-- `switchSign()`: -x
-- `sine()`: sin(x)
-- `cosine()`: cos(x)
-- `tangent()`: tan(x)
-- `inverseSine()`: sin<sup>-1</sup>(x)
-- `inverseCosine()`: sin<sup>-1</sup>(x)
-- `inverseTangent()`: tan<sup>-1</sup>(x)
-- `factorial()`: x! (x factorial)
-
-## Submission
-
-Completed projects should be submitted by submitting a pull request against the [original repository](https://git.zipcode.rocks/Cohort4.2/ZCW-MacroLabs-OOP-ScientificCalculator). All work should be done in your own repository.
